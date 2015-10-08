@@ -1,0 +1,76 @@
+<script>
+    /**
+     * Created by Amaster on 10/8/2015.
+     */
+    function sum(n1, n2) {
+        return n1 + n2;
+    }
+    console.log("sum: " + sum(1, 3));
+
+    function isEven(number) {
+        return (number % 2 == 0);
+    }
+    console.log("isEven: " + isEven(5));
+
+    function isBetween(n1, n2) {
+        var large = (n1 > n2) ? n1 : n2;
+        var small = (n1 > n2) ? n2 : n1;
+        var i = small;
+        console.log("Between: ")
+        while (i <= large) {
+            console.log(i + " ");
+            i++;
+        }
+    }
+    isBetween(6, 2);
+    isBetween(2, 6);
+
+    function hypotenuse(side1, side2) {
+        return Math.sqrt(side1 * side1 + side2 * side2);
+    }
+    console.log("hypotenuse: " + hypotenuse(3, 4));
+
+    function pyramid(n) {
+        var arrPyramid = [];
+        for (var i = 0; i <= n; i++) {
+            arrPyramid.push("@");
+            console.log(arrPyramid.join(''));
+        }
+        for (var i = n; i >= 1; i--) {
+            arrPyramid.pop();
+            console.log(arrPyramid.join(''));
+        }
+    }
+    pyramid(10);
+
+    //---------------------
+    function windowSize() {
+        return {width: window.innerWidth, height: window.innerHeight};
+    }
+    var size = windowSize();
+    console.log(size.width + ", " + size.height);
+
+    //---------------------
+    function newTab() {
+        window.open("http://google.com");
+    }
+    //newTab();
+
+    //---------------
+    function printTime() {
+        console.log(new Date());
+    }
+    window.setInterval(function () {
+        printTime();
+    }, 1000);
+
+    //-----------------
+    function getLocation(){
+        var location = window.location;
+        var hostname = location.hostname;
+        var protocol = location.protocol;
+        var notifyString = (protocol == "https:")?"": "Current page is unsecure"
+        alert(hostname + "\n" + protocol + "\n" + notifyString + "\n");
+    }
+    getLocation();
+</script>
